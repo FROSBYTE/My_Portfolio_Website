@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: #121212;
             color: #ffffff;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1600px;
             margin: 0 auto;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         .header {
@@ -28,6 +38,7 @@
             background-color: #181818;
             border-radius: 8px;
             margin-bottom: 16px;
+            overflow: hidden;
         }
 
         .profile-image {
@@ -678,6 +689,22 @@
             padding: 0 20px;
             text-align: center;
         }
+
+        .sdk-demos-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1024px) {
+            .sdk-demos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sdk-demos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -753,6 +780,30 @@
 
                 <div class="project-card">
                     <div class="image-area">
+                        <img src="https://lh3.googleusercontent.com/G38KFBcQSSBKAP2Ka4EWmWBrxdRfYH5jARGAqLOleyrFRA2AjZdN5gcA2rrfRRJb_G6mWDIA6AyFxt0wqHVHeYXffA=s120" alt="Polishr" class="project-image">
+                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
+                        <iframe 
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/74I171-WP2M?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Polishr : Your One Click Fixer</h3>
+                        <p class="project-description">A Chrome extension that lets you instantly fix grammar, optimize prompts, and shorten text for AI chatbots with a single click. No more switching tabs or opening separate windows just to refine a prompt — click, improve, and send.</p>
+                        <a href="https://chromewebstore.google.com/detail/lnmjaajckjejhgghjjibpgcidkomihja" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Chrome Web Store</a>
+                        <div style="display: flex; align-items: center; gap: 5px;">
+                            <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
+                            <span style="font-size: 0.9em; color: #666;">
+                                <span style="color: #1DB954;">Chrome Extension</span>, Productivity, AI, Grammar
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="image-area">
                         <img src="https://lh3.googleusercontent.com/2qM1xagRoHsijGLwha7nuI06jj_a6mM6boahfhkREcecOiQB0tduNVCUA-wbkh6X08hFd4Xx6bDqsCLrzw40" alt="Calma" class="project-image">
                     </div>
                     <div class="project-info">
@@ -773,8 +824,7 @@
                         <img src="https://img.itch.zone/aW1nLzEwNjE5NzEzLnBuZw==/315x250%23c/no4oud.png" alt="Pixel Journeys" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/Jrila9pNmQ0?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/Jrila9pNmQ0?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -798,8 +848,7 @@
                         <img src="https://play-lh.googleusercontent.com/pb_MtqXhteM0_BUO9BSlKmmSDe6II1O4VTzA1j_vgMWAiS6qBXgduEdUX04YTYmCpic=w480-h960-rw" alt="Twisty Turns" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/SNsxg98SYSM?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/SNsxg98SYSM?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -859,8 +908,7 @@
                         <img src="https://img.youtube.com/vi/Qp7yAgmcUZQ/maxresdefault.jpg" alt="Project Pilot" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/Qp7yAgmcUZQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/Qp7yAgmcUZQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -884,8 +932,7 @@
                         <img src="https://img.youtube.com/vi/Vo_72H1qFtE/maxresdefault.jpg" alt="Inspectify" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/Vo_72H1qFtE?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/Vo_72H1qFtE?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -909,8 +956,7 @@
                         <img src="https://img.youtube.com/vi/XhCk9tk8o5U/maxresdefault.jpg" alt="Scene Flow" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/XhCk9tk8o5U?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/XhCk9tk8o5U?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -934,8 +980,7 @@
                         <img src="https://play-lh.googleusercontent.com/vGchBz-huvpphj-OQ2K82-goWo43SDu0hl24gvOyIdDepScZTiv9pZ-FSAowhZRH2A=w480-h960-rw" alt="Dash Loop" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/pyeJcws9vCQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/pyeJcws9vCQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -959,8 +1004,7 @@
                         <img src="https://play-lh.googleusercontent.com/RKRMCwP6dz3b-Iddy9zXsSgiRCtkeQqMTEBQYE68BUEKez5mLfN4cZopo9oTg-q8gLI=w480-h960-rw" alt="Orb Rush" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/GiPP9_D89Jk?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/GiPP9_D89Jk?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -984,8 +1028,7 @@
                         <img src="https://img.itch.zone/aW1nLzEwMDc1NzA4LnBuZw==/315x250%23c/9t22kk.png" alt="Neon Rider" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/FFYzf0cGOyQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/FFYzf0cGOyQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -1031,14 +1074,13 @@
                 <div style="width: 60px; height: 3px; background: #1DB954; margin: 0 auto;"></div>
             </div>
             
-            <div class="projects-grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1200px; margin: 0 auto;">
+            <div class="projects-grid sdk-demos-grid" style="max-width: 1200px; margin: 0 auto;">
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/BIx_hACjcYY/maxresdefault.jpg" alt="Photon Fusion Demo" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/BIx_hACjcYY?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/BIx_hACjcYY?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -1065,8 +1107,7 @@
                         <img src="https://img.youtube.com/vi/WSIl1Pm6BW0/maxresdefault.jpg" alt="Firebase Demo" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/WSIl1Pm6BW0?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/WSIl1Pm6BW0?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -1093,8 +1134,7 @@
                         <img src="https://img.youtube.com/vi/Ndi0fHc8OWg/maxresdefault.jpg" alt="ElevenLabs Demo" class="project-image">
                         <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
                         <iframe 
-                            class="preview-video"
-                            src="https://www.youtube.com/embed/Ndi0fHc8OWg?enablejsapi=1&controls=0&modestbranding=1&mute=1"
+                            class="preview-video" data-video-src="https://www.youtube.com/embed/Ndi0fHc8OWg?enablejsapi=1&controls=0&modestbranding=1&mute=1"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>
@@ -1315,8 +1355,18 @@
         function playVideo(button) {
             const iframe = button.nextElementSibling;
             if (iframe && iframe.tagName === 'IFRAME') {
+                // Lazy load: only set src on first hover
+                const videoSrc = iframe.getAttribute('data-video-src');
+                if (videoSrc && !iframe.src) {
+                    iframe.src = videoSrc;
+                }
+                
                 iframe.style.display = 'block';
-                safePostMessage(iframe, '{"event":"command","func":"playVideo","args":""}');
+                
+                // Give iframe time to load before trying to play
+                setTimeout(() => {
+                    safePostMessage(iframe, '{"event":"command","func":"playVideo","args":""}');
+                }, 100);
             }
         }
 
@@ -1328,41 +1378,8 @@
             }
         }
 
-        // Initialize YouTube API for each video
-        function onYouTubeIframeAPIReady() {
-            // Skip YouTube API initialization in file:// context
-            if (window.location.protocol === 'file:') {
-                return;
-            }
-            
-            try {
-                document.querySelectorAll('.preview-video').forEach(iframe => {
-                    if (iframe && iframe.src && iframe.src.includes('youtube.com')) {
-                        new YT.Player(iframe, {
-                            events: {
-                                'onReady': function(event) {
-                                    try {
-                                        event.target.mute(); // Ensure video is muted
-                                    } catch (e) {
-                                        // Silently handle errors
-                                    }
-                                }
-                            }
-                        });
-                    }
-                });
-            } catch (e) {
-                // Silently handle errors
-            }
-        }
-
-        // Load YouTube API only if not in file:// context
-        if (window.location.protocol !== 'file:') {
-            const tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            const firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        }
+        // YouTube API is no longer needed since videos are lazy-loaded on hover
+        // Videos will be muted by default via the mute=1 parameter in the URL
     </script>
 </body>
 </html>
