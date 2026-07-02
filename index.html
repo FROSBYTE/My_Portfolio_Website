@@ -73,6 +73,7 @@
             transform: scale(1.02);
         }
 
+
         .image-area {
             position: relative;
             width: 100%;
@@ -81,44 +82,36 @@
             overflow: hidden;
         }
 
+        .yt-overlay {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            z-index: 3;
+            background: #FF0000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            width: 36px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .yt-overlay:hover {
+            background: #cc0000;
+            transform: scale(1.1);
+            color: #fff;
+        }
+
         .project-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .preview-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            display: none;
-        }
-
-        .invisible-button {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 2;
-        }
-
-        .invisible-button:hover + .preview-video {
-            opacity: 1;
-            display: block;
-        }
-
-        .invisible-button:hover ~ .project-image {
-            opacity: 0;
         }
 
         .project-info {
@@ -781,18 +774,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://lh3.googleusercontent.com/G38KFBcQSSBKAP2Ka4EWmWBrxdRfYH5jARGAqLOleyrFRA2AjZdN5gcA2rrfRRJb_G6mWDIA6AyFxt0wqHVHeYXffA=s120" alt="Polishr" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/74I171-WP2M?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=74I171-WP2M" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Polishr : Your One Click Fixer</h3>
                         <p class="project-description">A Chrome extension that lets you instantly fix grammar, optimize prompts, and shorten text for AI chatbots with a single click. No more switching tabs or opening separate windows just to refine a prompt — click, improve, and send.</p>
-                        <a href="https://chromewebstore.google.com/detail/lnmjaajckjejhgghjjibpgcidkomihja" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Chrome Web Store</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://chromewebstore.google.com/detail/lnmjaajckjejhgghjjibpgcidkomihja" target="_blank" class="social-link">Chrome Web Store</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -822,18 +811,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.itch.zone/aW1nLzEwNjE5NzEzLnBuZw==/315x250%23c/no4oud.png" alt="Pixel Journeys" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/Jrila9pNmQ0?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=Jrila9pNmQ0" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Pixel Journeys</h3>
                         <p class="project-description">A 2D side-scrolling adventure platformer built with Unity. Experience a pixel art world where you can run, jump, and explore through various levels. Features classic platforming mechanics with a modern twist.</p>
-                        <a href="https://frosbyte.itch.io/pixel-journeys" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Play Game</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://frosbyte.itch.io/pixel-journeys" target="_blank" class="social-link">Play Game</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -846,18 +831,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://play-lh.googleusercontent.com/pb_MtqXhteM0_BUO9BSlKmmSDe6II1O4VTzA1j_vgMWAiS6qBXgduEdUX04YTYmCpic=w480-h960-rw" alt="Twisty Turns" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/SNsxg98SYSM?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=SNsxg98SYSM" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Twisty Turns</h3>
                         <p class="project-description">An addictive hyper-casual arcade game where you navigate through sharp corners and obstacles while collecting mini boxes to boost your score. Compete against players worldwide and climb to the top of the global leaderboard.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.FrosbyteArena.TwistyTurns" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Play Game</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://play.google.com/store/apps/details?id=com.FrosbyteArena.TwistyTurns" target="_blank" class="social-link">Play Game</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -906,18 +887,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/Qp7yAgmcUZQ/maxresdefault.jpg" alt="Project Pilot" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/Qp7yAgmcUZQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=Qp7yAgmcUZQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Project Pilot</h3>
                         <p class="project-description">Project Pilot is a simple, all-in-one tool to analyze and manage assets in your Unity project. Quickly find duplicate assets, unused files, and large assets that are taking up space. With smart filters and a clean interface, you'll get a clear view of your project — so you can clean up, optimize, and stay organized with ease.</p>
-                        <a href="https://assetstore.unity.com/packages/slug/322423" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">View on Unity Asset Store</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://assetstore.unity.com/packages/slug/322423" target="_blank" class="social-link">View on Unity Asset Store</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -930,18 +907,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/Vo_72H1qFtE/maxresdefault.jpg" alt="Inspectify" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/Vo_72H1qFtE?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=Vo_72H1qFtE" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Inspectify</h3>
                         <p class="project-description">A Unity editor tool which helps you work faster by customizing views, filters, and tools to see only what matters. Enhance your development workflow and focus on what's important for your project.</p>
-                        <a href="https://assetstore.unity.com/packages/tools/utilities/inspectify-custom-inspector-319859" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">View on Unity Asset Store</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://assetstore.unity.com/packages/tools/utilities/inspectify-custom-inspector-319859" target="_blank" class="social-link">View on Unity Asset Store</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -954,18 +927,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/XhCk9tk8o5U/maxresdefault.jpg" alt="Scene Flow" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/XhCk9tk8o5U?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=XhCk9tk8o5U" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Scene Flow</h3>
                         <p class="project-description">A Unity Editor toolbar dropdown for one-click scene switching—no more menu or Project window digging. Streamlines workflow for developers by providing quick access to all scenes in your project.</p>
-                        <a href="https://assetstore.unity.com/packages/tools/utilities/sceneflow-build-switch-toolkit-317178" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">View on Unity Asset Store</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://assetstore.unity.com/packages/tools/utilities/sceneflow-build-switch-toolkit-317178" target="_blank" class="social-link">View on Unity Asset Store</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -978,18 +947,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://play-lh.googleusercontent.com/vGchBz-huvpphj-OQ2K82-goWo43SDu0hl24gvOyIdDepScZTiv9pZ-FSAowhZRH2A=w480-h960-rw" alt="Dash Loop" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/pyeJcws9vCQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=pyeJcws9vCQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Dash Loop</h3>
                         <p class="project-description">A fast-paced arcade game where your reflexes are put to the ultimate test. Tap to move and dodge the relentless squares while aiming for the highest score. Features easy controls, addictive gameplay, and competitive leaderboards.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.FrosbyteArena.Dashloop" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Play Game</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://play.google.com/store/apps/details?id=com.FrosbyteArena.Dashloop" target="_blank" class="social-link">Play Game</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -1002,18 +967,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://play-lh.googleusercontent.com/RKRMCwP6dz3b-Iddy9zXsSgiRCtkeQqMTEBQYE68BUEKez5mLfN4cZopo9oTg-q8gLI=w480-h960-rw" alt="Orb Rush" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/GiPP9_D89Jk?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=GiPP9_D89Jk" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Orb Rush</h3>
                         <p class="project-description">A casual endless runner where players navigate a fast-moving orb through challenging obstacles. Features intuitive touch controls, progressive difficulty scaling, and intense gameplay that tests your reflexes and decision-making skills.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.FrosbyteArena.OrbRush" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Play Game</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://play.google.com/store/apps/details?id=com.FrosbyteArena.OrbRush" target="_blank" class="social-link">Play Game</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -1026,18 +987,14 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.itch.zone/aW1nLzEwMDc1NzA4LnBuZw==/315x250%23c/9t22kk.png" alt="Neon Rider" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/FFYzf0cGOyQ?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=FFYzf0cGOyQ" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Neon Rider</h3>
                         <p class="project-description">A thrilling 2D racing game inspired by the classic "RIDER". Navigate through neon-lit tracks with precise controls, perform stunts, and challenge yourself across various levels. Features sleek neon visuals and addictive gameplay.</p>
-                        <a href="https://frosbyte.itch.io/rider" target="_blank" class="social-link" style="display: inline-block; margin-top: 15px; margin-bottom: 10px;">Play Game</a>
+                        <div style="display: flex; gap: 10px; margin-top: 15px; margin-bottom: 10px;">
+                            <a href="https://frosbyte.itch.io/rider" target="_blank" class="social-link">Play Game</a>
+                        </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <i class="fas fa-tag" style="font-size: 0.9em; color: #666;"></i>
                             <span style="font-size: 0.9em; color: #666;">
@@ -1078,13 +1035,7 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/BIx_hACjcYY/maxresdefault.jpg" alt="Photon Fusion Demo" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/BIx_hACjcYY?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=BIx_hACjcYY" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Photon Fusion SDK Demo</h3>
@@ -1105,13 +1056,7 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/WSIl1Pm6BW0/maxresdefault.jpg" alt="Firebase Demo" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/WSIl1Pm6BW0?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=WSIl1Pm6BW0" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Firebase Demo</h3>
@@ -1132,13 +1077,7 @@
                 <div class="project-card">
                     <div class="image-area">
                         <img src="https://img.youtube.com/vi/Ndi0fHc8OWg/maxresdefault.jpg" alt="ElevenLabs Demo" class="project-image">
-                        <button class="invisible-button" onmouseenter="playVideo(this)" onmouseleave="stopVideo(this)"></button>
-                        <iframe 
-                            class="preview-video" data-video-src="https://www.youtube.com/embed/Ndi0fHc8OWg?enablejsapi=1&controls=0&modestbranding=1&mute=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        <a href="https://www.youtube.com/watch?v=Ndi0fHc8OWg" target="_blank" class="yt-overlay" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">ElevenLabs Demo</h3>
@@ -1332,51 +1271,6 @@
         document.getElementById('gameplayModal').addEventListener('click', function(e) {
             if (e.target === this) closeGameplay();
         });
-
-        // Helper function to safely post message to YouTube iframe
-        function safePostMessage(iframe, message) {
-            try {
-                // Skip all postMessage calls if in file:// context to avoid origin errors
-                if (window.location.protocol === 'file:') {
-                    return;
-                }
-                
-                // Check if iframe exists and is a YouTube iframe
-                if (!iframe || !iframe.contentWindow) return;
-                if (!iframe.src || !iframe.src.includes('youtube.com')) return;
-                
-                // Post message with proper origin
-                iframe.contentWindow.postMessage(message, 'https://www.youtube.com');
-            } catch (e) {
-                // Silently handle all errors to prevent console spam
-            }
-        }
-
-        function playVideo(button) {
-            const iframe = button.nextElementSibling;
-            if (iframe && iframe.tagName === 'IFRAME') {
-                // Lazy load: only set src on first hover
-                const videoSrc = iframe.getAttribute('data-video-src');
-                if (videoSrc && !iframe.src) {
-                    iframe.src = videoSrc;
-                }
-                
-                iframe.style.display = 'block';
-                
-                // Give iframe time to load before trying to play
-                setTimeout(() => {
-                    safePostMessage(iframe, '{"event":"command","func":"playVideo","args":""}');
-                }, 100);
-            }
-        }
-
-        function stopVideo(button) {
-            const iframe = button.nextElementSibling;
-            if (iframe && iframe.tagName === 'IFRAME') {
-                iframe.style.display = 'none';
-                safePostMessage(iframe, '{"event":"command","func":"pauseVideo","args":""}');
-            }
-        }
 
         // YouTube API is no longer needed since videos are lazy-loaded on hover
         // Videos will be muted by default via the mute=1 parameter in the URL
